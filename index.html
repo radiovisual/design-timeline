@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Michael Wuergler — Design Timeline</title>
+<meta name="description" content="Selected past and present design work by Michael Wuergler.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,300..600;1,6..72,300..500&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#f7f5f0; --paper-2:#efece5; --ink:#1c1b19; --ink-2:#55524b; --ink-3:#8a867c;
+    --rule:#dcd8cf; --accent:oklch(0.56 0.15 35);
+    --serif:"Newsreader",Georgia,serif; --sans:"Hanken Grotesk",system-ui,sans-serif; --mono:"JetBrains Mono",ui-monospace,monospace;
+    --max:1240px; --pad:clamp(20px,5vw,56px); --nav-h:60px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+  body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  a{color:var(--ink);text-decoration-color:var(--rule);text-underline-offset:3px}
+  a:hover{color:var(--accent)}
+  img,video{display:block;max-width:100%}
+  ::selection{background:oklch(0.56 0.15 35 / .18)}
+
+  /* Nav */
+  .nav{position:sticky;top:0;z-index:20;height:var(--nav-h);background:rgb(247 245 240 / .86);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid transparent;transition:border-color .3s}
+  .nav.scrolled{border-bottom-color:var(--rule)}
+  .nav-inner{max-width:var(--max);margin:0 auto;height:100%;padding:0 var(--pad);display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{font-family:var(--serif);font-size:20px;font-weight:500;text-decoration:none;letter-spacing:-.01em;white-space:nowrap}
+  .nav-links{display:flex;gap:4px;list-style:none;overflow-x:auto;scrollbar-width:none}
+  .nav-links::-webkit-scrollbar{display:none}
+  .nav-links a{display:block;padding:6px 12px;border-radius:99px;font-size:14px;font-weight:500;color:var(--ink-2);text-decoration:none;white-space:nowrap;transition:background .2s,color .2s}
+  .nav-links a:hover{color:var(--ink);background:var(--paper-2)}
+  .nav-links a.active{color:var(--paper);background:var(--ink)}
+  .menu-btn{display:none;background:none;border:1px solid var(--rule);border-radius:99px;padding:6px 14px;font:500 14px var(--sans);color:var(--ink);cursor:pointer}
+
+  /* Hero */
+  .wrap{max-width:var(--max);margin:0 auto;padding:0 var(--pad)}
+  .hero{padding-top:clamp(72px,14vw,168px);padding-bottom:clamp(56px,9vw,112px)}
+  .eyebrow{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3)}
+  .hero h1{font-family:var(--serif);font-weight:300;font-size:clamp(48px,9vw,128px);line-height:.98;letter-spacing:-.035em;margin:20px 0 32px;text-wrap:balance}
+  .hero h1 em{font-style:italic;color:var(--accent)}
+  .hero p{max-width:34em;font-size:clamp(17px,1.6vw,20px);color:var(--ink-2);text-wrap:pretty}
+  .index{margin-top:clamp(48px,7vw,88px);border-top:1px solid var(--ink);list-style:none;counter-reset:i}
+  .index li{border-bottom:1px solid var(--rule)}
+  .index a{display:grid;grid-template-columns:56px 1fr auto;align-items:baseline;gap:16px;padding:18px 0;text-decoration:none;transition:padding .25s,color .2s}
+  .index a:hover{padding-left:10px;color:var(--accent)}
+  .index .n{font-family:var(--mono);font-size:12px;color:var(--ink-3)}
+  .index .t{font-family:var(--serif);font-size:clamp(22px,2.6vw,32px);letter-spacing:-.015em;line-height:1.2}
+  .index .d{font-size:14px;color:var(--ink-3);text-align:right}
+
+  /* Projects */
+  .project{padding:clamp(72px,10vw,128px) 0;border-top:1px solid var(--rule);scroll-margin-top:var(--nav-h)}
+  .p-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,5vw,80px);margin-bottom:clamp(40px,6vw,72px)}
+  .p-num{font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--accent);margin-bottom:16px}
+  .p-head h2{font-family:var(--serif);font-weight:400;font-size:clamp(38px,5.4vw,72px);line-height:1.02;letter-spacing:-.03em;text-wrap:balance}
+  .p-tag{font-family:var(--serif);font-style:italic;font-size:clamp(19px,1.8vw,23px);line-height:1.4;color:var(--ink);margin-bottom:18px;text-wrap:pretty}
+  .p-body p{color:var(--ink-2);max-width:38em;text-wrap:pretty}
+  .p-body p+p{margin-top:1em}
+  .sub{margin-top:clamp(56px,7vw,88px)}
+  .sub-head{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:clamp(24px,5vw,80px);margin-bottom:28px;padding-top:20px;border-top:1px solid var(--rule)}
+  .sub-head h3{font-family:var(--sans);font-weight:600;font-size:15px;letter-spacing:.01em}
+  .sub-head p{color:var(--ink-2);font-size:16px;max-width:38em;text-wrap:pretty}
+
+  /* Gallery */
+  .gallery{display:grid;gap:clamp(10px,1.4vw,18px);grid-template-columns:repeat(var(--cols,3),minmax(0,1fr))}
+  .gallery.c5>:first-child{grid-column:span 2}
+  @media (min-width:901px){.gallery.c5>:first-child{aspect-ratio:auto}.gallery.c5 .tile{height:100%}}
+  .tile{position:relative;overflow:hidden;border-radius:6px;background:var(--paper-2);aspect-ratio:16/10;cursor:zoom-in;border:0;padding:0;box-shadow:0 0 0 1px rgb(28 27 25 / .06),0 1px 2px rgb(28 27 25 / .04),0 8px 24px -12px rgb(28 27 25 / .18);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
+  .tile:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgb(28 27 25 / .08),0 2px 4px rgb(28 27 25 / .05),0 20px 40px -16px rgb(28 27 25 / .28)}
+  .tile:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
+  .tile img,.tile video{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .tile:hover img{transform:scale(1.025)}
+  .tile.feature{aspect-ratio:21/10}
+  .tile .badge{position:absolute;left:10px;bottom:10px;font:500 11px var(--mono);letter-spacing:.04em;color:var(--paper);background:rgb(28 27 25 / .72);padding:4px 8px;border-radius:99px;pointer-events:none}
+  .tile.missing{cursor:default;background:repeating-linear-gradient(135deg,var(--paper-2) 0 10px,#e8e4dc 10px 20px);display:flex;align-items:center;justify-content:center;padding:16px}
+  .tile.missing span{font:12px/1.5 var(--mono);color:var(--ink-3);text-align:center;word-break:break-all;background:var(--paper);padding:6px 10px;border-radius:4px}
+
+  /* Footer */
+  footer{border-top:1px solid var(--ink);padding:40px 0 64px;color:var(--ink-3);font-size:14px}
+  footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+  .top-link{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;text-decoration:none;color:var(--ink-2)}
+
+  /* Lightbox */
+  .lb{position:fixed;inset:0;z-index:50;background:rgb(247 245 240 / .97);display:none;flex-direction:column}
+  .lb.open{display:flex;animation:fade .25s ease}
+  .lb-bar{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px var(--pad);border-bottom:1px solid var(--rule)}
+  .lb-cap{font:12px var(--mono);color:var(--ink-2);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+  .lb-ctrl{display:flex;gap:8px}
+  .lb-ctrl button{background:var(--paper);border:1px solid var(--rule);border-radius:99px;height:36px;min-width:36px;padding:0 14px;font:500 14px var(--sans);color:var(--ink);cursor:pointer}
+  .lb-ctrl button:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+  .lb-stage{flex:1;overflow:auto;display:flex;justify-content:center;align-items:flex-start;padding:clamp(16px,3vw,40px)}
+  .lb-stage img,.lb-stage video{margin:auto;max-height:calc(100vh - 150px);width:auto;border-radius:4px;box-shadow:0 0 0 1px rgb(28 27 25 / .08),0 30px 60px -30px rgb(28 27 25 / .35)}
+  .lb-stage.tall img{max-height:none;width:min(1100px,100%);margin:0 auto}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+
+  /* Reveal */
+  .reveal{opacity:0;transform:translateY(18px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.tile,.tile img{transition:none}}
+
+  @media (max-width:900px){
+    .p-head,.sub-head{grid-template-columns:1fr;gap:16px}
+    .gallery{grid-template-columns:repeat(2,minmax(0,1fr))}
+    .gallery.c1{grid-template-columns:1fr}
+    .gallery.c3>:first-child,.gallery.c5>:first-child{grid-column:span 2}
+    .tile.feature{aspect-ratio:16/10}
+    .index .d{display:none}
+    .index a{grid-template-columns:44px 1fr}
+  }
+  @media (max-width:720px){
+    .menu-btn{display:block}
+    .nav-links{position:absolute;top:var(--nav-h);left:0;right:0;flex-direction:column;gap:0;padding:8px var(--pad) 16px;background:var(--paper);border-bottom:1px solid var(--rule);display:none}
+    .nav.open .nav-links{display:flex}
+    .nav-links a{padding:12px 0;border-radius:0;font-size:16px;border-bottom:1px solid var(--paper-2)}
+    .nav-links a.active{background:none;color:var(--accent)}
+  }
+  @media (max-width:560px){
+    .gallery,.gallery.c1{grid-template-columns:1fr}
+    .gallery>*{grid-column:auto!important}
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="brand" href="#top">Michael Wuergler</a>
+    <button class="menu-btn" id="menuBtn" aria-expanded="false" aria-controls="navLinks">Projects</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#redsight">redSight</a></li>
+      <li><a href="#appgate">AppGate × Mastercard</a></li>
+      <li><a href="#stickr">Stickr Store</a></li>
+      <li><a href="#immunity">Immunity Inc.</a></li>
+      <li><a href="#infiltrate">Infiltrate</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="wrap hero" id="top">
+  <div class="eyebrow reveal">Selected work — past &amp; present</div>
+  <h1 class="reveal">A design <em>timeline</em></h1>
+  <p class="reveal">Product, web and brand design for security companies, conferences and my own projects — from hand-built websites and conference swag to AI-assisted design systems and games.</p>
+  <ol class="index reveal">
+    <li><a href="#redsight"><span class="n">01</span><span class="t">redSight</span><span class="d">Product · Design system</span></a></li>
+    <li><a href="#appgate"><span class="n">02</span><span class="t">AppGate &amp; Mastercard Mini Games</span><span class="d">Games · Portal</span></a></li>
+    <li><a href="#stickr"><span class="n">03</span><span class="t">Stickr Store</span><span class="d">Product · Editor</span></a></li>
+    <li><a href="#immunity"><span class="n">04</span><span class="t">Immunity Inc.</span><span class="d">Web · Brand</span></a></li>
+    <li><a href="#infiltrate"><span class="n">05</span><span class="t">Infiltrate Security Conference</span><span class="d">Web · Print · Swag</span></a></li>
+  </ol>
+</header>
+
+<main class="wrap">
+
+  <!-- 01 redSight -->
+  <section class="project" id="redsight">
+    <div class="p-head reveal">
+      <div><div class="p-num">01 — Personal project</div><h2>redSight</h2></div>
+      <div class="p-body">
+        <p class="p-tag">An online platform for sharpening your skill at finding bugs in source code.</p>
+        <p>A personal project that keeps my bug-hunting skills sharp in the age of AI-generated code. I used Claude Design in a structured way, so designs translate cleanly into usable components and workflows in a Next.js application.</p>
+      </div>
+    </div>
+
+    <div class="sub">
+      <div class="sub-head reveal"><h3>Design System</h3><p>Everything starts with a custom design system, strictly enforced with visual-regression and behavioral tests.</p></div>
+      <div class="gallery c2 reveal" style="--cols:2">
+        <button class="tile"><img loading="lazy" src="./images/web-portfolio/redsight/colour-tokens-paper-ink.png" alt="Colour tokens — paper and ink"></button>
+        <button class="tile"><img loading="lazy" src="./images/web-portfolio/redsight/components.png" alt="Components"></button>
+        <button class="tile"><img loading="lazy" src="./images/web-portfolio/redsight/hand-off-notes.png" alt="Hand-off notes"></button>
+        <button class="tile"><img loading="lazy" src="./images/web-portfolio/redsight/type-spacing-radius-elevation-motion.png" alt="Type, spacing, radius, elevation and motion"></button>
+      </div>
+    </div>
+
+    <div class="sub">
+      <div class="sub-head reveal"><h3>Source Code View</h3><p>The screen where users read the problematic source code and hunt for bugs. Shown in light and dark mode, with different features toggled in each.</p></div>
+      <div class="gallery c2 reveal" style="--cols:2">
+        <button class="tile"><img loading="lazy" src="./images/web-portfolio/redsight/workspace-bug-count-hidden.png" alt="Workspace — bug count hidden, reveal costs credits"></button>
+        <button class="tile"><img loading="lazy" src="./images/web-portfolio/redsight/workspace-count-revealed.png" alt="Workspace — count revealed, Pro nudge"></button>
+      </div>
+    </div>
+
+    <div class="sub">
+      <div class="sub-head reveal"><h3>Results View</h3><p>After submitting the bugs they found (or missed), users see their results here. Shown in light and dark mode.</p></div>
+      <div class="gallery c3 reveal" style="--cols:3">
+        <button class="tile"><img loading="lazy" src="./images/web-portfolio/redsight/results-xp.png" alt="Results with XP"></button>
+        <button class="tile"><img loading="lazy" src="./images/web-portfolio/redsight/results-xp-credits-tier-gates.png" alt="Results — XP, credits and tier gates"></button>
+        <button class="tile"><img loading="lazy" src="./images/web-portfolio/redsight/results-practice-run.png" alt="Results — practice run vs. best"></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 02 AppGate -->
+  <section class="project" id="appgate">
+    <div class="p-head reveal">
+      <div><div class="p-num">02 — Client work</div><h2>AppGate &amp; Mastercard Mini Games + Portal</h2></div>
+      <div class="p-body">
+        <p class="p-tag">Five mini games for conference attendees, and a portal to present them.</p>
+        <p>I designed a working game portal to show Mastercard and AppGate the mini games I created for them, to be played by attendees at a security conference.</p>
+      </div>
+    </div>
+    <div class="gallery c1 reveal" style="--cols:1">
+      <button class="tile feature"><img loading="lazy" src="./images/web-portfolio/appgate/game-portal-index.jpg" alt="Game portal index"></button>
+    </div>
+
+    <div class="sub">
+      <div class="sub-head reveal"><h3>Mini Games</h3><p>I made five mini games, all designed in Claude Design and then handed over to Claude Code for development. Here are a few of them in action.</p></div>
+      <div class="gallery c3 reveal" style="--cols:3">
+        <button class="tile"><video muted loop playsinline preload="metadata" src="./images/web-portfolio/appgate/clearing-game-demo.mp4"></video></button>
+        <button class="tile"><video muted loop playsinline preload="metadata" src="./images/web-portfolio/appgate/fraud-defense-demo.mp4" poster="./images/web-portfolio/appgate/fraud-defense-start-page.png"></video></button>
+        <button class="tile"><video muted loop playsinline preload="metadata" src="./images/web-portfolio/appgate/threat-breaker-demo.mp4"></video></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- 03 Stickr -->
+  <section class="project" id="stickr">
+    <div class="p-head reveal">
+      <div><div class="p-num">03 — Ongoing personal project</div><h2>Stickr Store</h2></div>
+      <div class="p-body">
+        <p class="p-tag">A Photoshop- and Figma-inspired editor for designing custom stickers and sending them to print.</p>
+        <p>An ongoing personal project that has taught me how to push AI-assisted design workflows to their limit. It's a complex build: a full editor for designing custom stickers, connected to a print pipeline.</p>
+      </div>
+    </div>
+    <div class="gallery c5 reveal" style="--cols:3">
+      <button class="tile"><img loading="lazy" src="./images/web-portfolio/stickr-store/homepage-hero.png" alt="Homepage hero"></button>
+      <button class="tile"><img loading="lazy" src="./images/web-portfolio/stickr-store/sticker-wall-editor-01.png" alt="Sticker wall editor"></button>
+      <button class="tile"><img loading="lazy" src="./images/web-portfolio/stickr-store/sticker-wall-print-guides.png" alt="Sticker wall print guides"></button>
+      <button class="tile"><img loading="lazy" src="./images/web-portfolio/stickr-store/sticker-wall-share-dialogs.png" alt="Share dialogs"></button>
+      <button class="tile"><img loading="lazy" src="./images/web-portfolio/stickr-store/template-creator-step-1.png" alt="Template creator, step 1"></button>
+    </div>
+  </section>
+
+  <!-- 04 Immunity -->
+  <section class="project" id="immunity">
+    <div class="p-head reveal">
+      <div><div class="p-num">04 — Client work</div><h2>Immunity Inc.</h2></div>
+      <div class="p-body">
+        <p class="p-tag">Websites, branding and marketing for an offensive security company.</p>
+        <p>I did a wide range of design work for Immunity Inc. — from designing and building complete websites for the company and its security conference, Infiltrate, to graphic design: logo and branding, marketing material and swag.</p>
+      </div>
+    </div>
+    <div class="gallery c2 reveal" style="--cols:2">
+      <button class="tile"><video muted loop playsinline preload="metadata" src="./images/web-portfolio/immunity/immunity-inc-homepage-navigaton-demo.mp4" poster="./images/web-portfolio/immunity/immunityinc-homepage-hero-jan-01-2019.png"></video></button>
+      <button class="tile"><img loading="lazy" src="./images/web-portfolio/immunity/immunityinc-full-homepage-jan-01-2019.jpg" alt="Immunity Inc. full homepage, January 2019"></button>
+    </div>
+  </section>
+
+  <!-- 05 Infiltrate -->
+  <section class="project" id="infiltrate">
+    <div class="p-head reveal">
+      <div><div class="p-num">05 — Client work</div><h2>Infiltrate Security Conference</h2></div>
+      <div class="p-body">
+        <p class="p-tag">Websites, graphic design and marketing for one of the top offensive security conferences.</p>
+        <p>Infiltrate, run by Immunity Inc., was one of the leading offensive security conferences. I designed, developed and maintained its websites, and created its graphic design and marketing material.</p>
+      </div>
+    </div>
+    <div class="gallery c2 reveal" style="--cols:2">
+      <button class="tile"><img loading="lazy" src="./images/web-portfolio/immunity/infiltrate-conf-full-page-index.png" alt="Infiltrate homepage"></button>
+      <button class="tile"><img loading="lazy" src="./images/web-portfolio/immunity/infiltrate-conf-lanyard.png" alt="Infiltrate lanyard"></button>
+      <button class="tile"><img loading="lazy" src="./images/web-portfolio/immunity/infiltrateconf-2019-speakers-page.jpg" alt="Infiltrate 2019 speakers page"></button>
+      <button class="tile"><img loading="lazy" src="./images/web-portfolio/immunity/infiltrate-conf-menu-open.png" alt="Infiltrate menu open"></button>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <span>© <span id="yr"></span> Michael Wuergler</span>
+    <a class="top-link" href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Image viewer">
+  <div class="lb-bar">
+    <span class="lb-cap" id="lbCap"></span>
+    <div class="lb-ctrl">
+      <button id="lbPrev" aria-label="Previous">←</button>
+      <button id="lbNext" aria-label="Next">→</button>
+      <button id="lbClose" aria-label="Close">Close</button>
+    </div>
+  </div>
+  <div class="lb-stage" id="lbStage"></div>
+</div>
+
+<script>
+(function(){
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  var nav = document.getElementById('nav'), menuBtn = document.getElementById('menuBtn');
+
+  // Sticky nav border + mobile menu
+  addEventListener('scroll', function(){ nav.classList.toggle('scrolled', scrollY > 8); }, {passive:true});
+  menuBtn.addEventListener('click', function(){
+    var o = nav.classList.toggle('open'); menuBtn.setAttribute('aria-expanded', o);
+  });
+  document.querySelectorAll('.nav-links a').forEach(function(a){ a.addEventListener('click', function(){ nav.classList.remove('open'); menuBtn.setAttribute('aria-expanded', false); }); });
+
+  // Scroll spy
+  var links = {}; document.querySelectorAll('.nav-links a').forEach(function(a){ links[a.getAttribute('href').slice(1)] = a; });
+  var spy = new IntersectionObserver(function(es){
+    es.forEach(function(e){ if(e.isIntersecting){ for(var k in links) links[k].classList.toggle('active', k === e.target.id); } });
+  }, {rootMargin:'-45% 0px -50% 0px'});
+  document.querySelectorAll('.project').forEach(function(s){ spy.observe(s); });
+  new IntersectionObserver(function(es){ if(es[0].isIntersecting) for(var k in links) links[k].classList.remove('active'); }, {rootMargin:'-45% 0px -50% 0px'}).observe(document.getElementById('top'));
+
+  // Reveal on scroll
+  var rv = new IntersectionObserver(function(es){ es.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); rv.unobserve(e.target); } }); }, {rootMargin:'0px 0px -8% 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ rv.observe(el); });
+
+  // Missing-file placeholder
+  function fileOf(src){ return decodeURIComponent(src.split('/').slice(-2).join('/')); }
+  function markMissing(tile, src){
+    tile.classList.add('missing'); tile.innerHTML = '<span>' + fileOf(src) + '</span>'; tile.tabIndex = -1;
+  }
+
+  // Videos: badge, play when visible, placeholder if missing
+  var vio = new IntersectionObserver(function(es){ es.forEach(function(e){ var v=e.target; if(e.isIntersecting){ var p=v.play(); if(p&&p.catch)p.catch(function(){}); } else v.pause(); }); }, {threshold:.35});
+  document.querySelectorAll('.tile video').forEach(function(v){
+    var t = v.parentNode, src = v.getAttribute('src');
+    v.addEventListener('error', function(){ markMissing(t, src); });
+    var b = document.createElement('span'); b.className='badge'; b.textContent='▶ Video'; t.appendChild(b);
+    vio.observe(v);
+  });
+  document.querySelectorAll('.tile img').forEach(function(img){
+    var t = img.parentNode, src = img.getAttribute('src');
+    if(img.complete && img.naturalWidth === 0) markMissing(t, src);
+    else img.addEventListener('error', function(){ markMissing(t, src); });
+  });
+
+  // Lightbox (per-gallery navigation)
+  var lb = document.getElementById('lb'), stage = document.getElementById('lbStage'), cap = document.getElementById('lbCap');
+  var group = [], idx = 0, lastFocus = null;
+  function render(){
+    var t = group[idx], img = t.querySelector('img'), vid = t.querySelector('video');
+    stage.innerHTML = ''; stage.classList.remove('tall'); stage.scrollTop = 0;
+    if(vid){
+      var v = document.createElement('video'); v.src = vid.getAttribute('src'); v.controls = true; v.autoplay = true; v.loop = true; v.playsInline = true; v.muted = true;
+      stage.appendChild(v); cap.textContent = fileOf(vid.getAttribute('src'));
+    } else if(img){
+      var i = document.createElement('img'); i.src = img.getAttribute('src'); i.alt = img.alt;
+      if(img.naturalHeight / img.naturalWidth > 1.4) stage.classList.add('tall');
+      stage.appendChild(i); cap.textContent = img.alt || fileOf(img.getAttribute('src'));
+    }
+    cap.textContent += group.length > 1 ? '  ·  ' + (idx+1) + ' / ' + group.length : '';
+    document.getElementById('lbPrev').style.visibility = document.getElementById('lbNext').style.visibility = group.length > 1 ? 'visible' : 'hidden';
+  }
+  function open(t){
+    group = Array.prototype.filter.call(t.closest('.project').querySelectorAll('.tile'), function(x){ return !x.classList.contains('missing'); });
+    idx = group.indexOf(t); lastFocus = t; lb.classList.add('open'); document.body.style.overflow = 'hidden'; render();
+    document.getElementById('lbClose').focus();
+  }
+  function close(){ lb.classList.remove('open'); stage.innerHTML = ''; document.body.style.overflow = ''; if(lastFocus) lastFocus.focus(); }
+  function step(d){ idx = (idx + d + group.length) % group.length; render(); }
+  document.addEventListener('click', function(e){ var t = e.target.closest('.tile'); if(t && !t.classList.contains('missing')) open(t); });
+  document.getElementById('lbClose').onclick = close;
+  document.getElementById('lbPrev').onclick = function(){ step(-1); };
+  document.getElementById('lbNext').onclick = function(){ step(1); };
+  stage.addEventListener('click', function(e){ if(e.target === stage) close(); });
+  document.addEventListener('keydown', function(e){
+    if(!lb.classList.contains('open')) return;
+    if(e.key === 'Escape') close(); else if(e.key === 'ArrowRight') step(1); else if(e.key === 'ArrowLeft') step(-1);
+  });
+})();
+</script>
+</body>
+</html>
