@@ -2,7 +2,7 @@
 
 A single-page portfolio of selected past and present design work: product design, design systems, games, websites and branding.
 
-**Live site:** `https://radiovisual.github.io/design-temeline/`
+**Live site:** https://radiovisual.github.io/design-timeline/
 
 ---
 
