@@ -66,7 +66,7 @@
   /* Gallery */
   .gallery{display:grid;gap:clamp(10px,1.4vw,18px);grid-template-columns:repeat(var(--cols,3),minmax(0,1fr))}
   .gallery.c5>:first-child{grid-column:span 2}
-  @media (min-width:901px){.gallery.c5>:first-child{aspect-ratio:auto}.gallery.c5 .tile{height:100%}}
+  @media (min-width:901px){.gallery.c5>:first-child{aspect-ratio:auto}.gallery.c5>:first-child img{position:absolute;inset:0}}
   .tile{position:relative;overflow:hidden;border-radius:6px;background:var(--paper-2);aspect-ratio:16/10;cursor:zoom-in;border:0;padding:0;box-shadow:0 0 0 1px rgb(28 27 25 / .06),0 1px 2px rgb(28 27 25 / .04),0 8px 24px -12px rgb(28 27 25 / .18);transition:transform .45s cubic-bezier(.2,.7,.2,1),box-shadow .45s}
   .tile:hover{transform:translateY(-3px);box-shadow:0 0 0 1px rgb(28 27 25 / .08),0 2px 4px rgb(28 27 25 / .05),0 20px 40px -16px rgb(28 27 25 / .28)}
   .tile:focus-visible{outline:2px solid var(--accent);outline-offset:3px}
