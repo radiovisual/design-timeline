@@ -93,6 +93,11 @@
   .lb-stage{flex:1;overflow:auto;display:flex;justify-content:center;align-items:flex-start;padding:clamp(16px,3vw,40px)}
   .lb-stage img,.lb-stage video{margin:auto;max-height:calc(100vh - 150px);width:auto;border-radius:4px;box-shadow:0 0 0 1px rgb(28 27 25 / .08),0 30px 60px -30px rgb(28 27 25 / .35)}
   .lb-stage.tall img{max-height:none;width:min(1100px,100%);margin:0 auto}
+  .lb.captioned .lb-stage img,.lb.captioned .lb-stage video{max-height:calc(100vh - 260px)}
+  .lb.captioned .lb-stage.tall img{max-height:none}
+  .lb-desc{padding:18px var(--pad) 26px;border-top:1px solid var(--rule);font-family:var(--serif);font-size:clamp(17px,1.6vw,20px);line-height:1.5;color:var(--ink-2);text-wrap:pretty}
+  .lb-desc:empty{display:none}
+  .lb-desc a{white-space:nowrap}
   @keyframes fade{from{opacity:0}to{opacity:1}}
 
   /* Reveal */
@@ -132,8 +137,11 @@
       <li><a href="#redsight">redSight</a></li>
       <li><a href="#appgate">AppGate × Mastercard</a></li>
       <li><a href="#stickr">Stickr Store</a></li>
+      <li><a href="#unhcr">UNHCR</a></li>
       <li><a href="#immunity">Immunity Inc.</a></li>
       <li><a href="#infiltrate">Infiltrate</a></li>
+      <li><a href="#numetric-labs">Numetric Labs</a></li>
+      <li><a href="#time-warner">Time Warner</a></li>
     </ul>
   </div>
 </nav>
@@ -146,8 +154,11 @@
     <li><a href="#redsight"><span class="n">01</span><span class="t">redSight</span><span class="d">Product · Design system</span></a></li>
     <li><a href="#appgate"><span class="n">02</span><span class="t">AppGate &amp; Mastercard Mini Games</span><span class="d">Games · Portal</span></a></li>
     <li><a href="#stickr"><span class="n">03</span><span class="t">Stickr Store</span><span class="d">Product · Editor</span></a></li>
-    <li><a href="#immunity"><span class="n">04</span><span class="t">Immunity Inc.</span><span class="d">Web · Brand</span></a></li>
-    <li><a href="#infiltrate"><span class="n">05</span><span class="t">Infiltrate Security Conference</span><span class="d">Web · Print · Swag</span></a></li>
+    <li><a href="#unhcr"><span class="n">04</span><span class="t">UNHCR — Tracks: Life on the Run</span><span class="d">Web · Interactive · Infographics</span></a></li>
+    <li><a href="#immunity"><span class="n">05</span><span class="t">Immunity Inc.</span><span class="d">Web · Brand</span></a></li>
+    <li><a href="#infiltrate"><span class="n">06</span><span class="t">Infiltrate Security Conference</span><span class="d">Web · Print · Swag</span></a></li>
+    <li><a href="#numetric-labs"><span class="n">07</span><span class="t">Numetric Labs</span><span class="d">Web · Portfolio</span></a></li>
+    <li><a href="#time-warner"><span class="n">08</span><span class="t">Time Warner — People Puzzler</span><span class="d">iPad game · Objective-C</span></a></li>
   </ol>
 </header>
 
@@ -166,27 +177,27 @@
     <div class="sub">
       <div class="sub-head reveal"><h3>Design System</h3><p>Everything starts with a custom design system, strictly enforced with visual-regression and behavioral tests.</p></div>
       <div class="gallery c2 reveal" style="--cols:2">
-        <button class="tile"><img loading="lazy" src="./images/web-portfolio/redsight/colour-tokens-paper-ink.png" alt="Colour tokens — paper and ink"></button>
-        <button class="tile"><img loading="lazy" src="./images/web-portfolio/redsight/components.png" alt="Components"></button>
-        <button class="tile"><img loading="lazy" src="./images/web-portfolio/redsight/hand-off-notes.png" alt="Hand-off notes"></button>
-        <button class="tile"><img loading="lazy" src="./images/web-portfolio/redsight/type-spacing-radius-elevation-motion.png" alt="Type, spacing, radius, elevation and motion"></button>
+        <button class="tile" data-caption="Warm, low-saturation neutrals keep long reading sessions easy on the eyes. Red is reserved for marking bugs, so it never appears in syntax highlighting. The light and dark themes share the same token names, so switching themes is a single class change."><img loading="lazy" src="./images/web-portfolio/redsight/colour-tokens-paper-ink.png" alt="Colour tokens — paper and ink"></button>
+        <button class="tile" data-caption="The parts list: buttons, inputs, the code viewer, the flag popover, test results and score cards, each shown in all its states. Every component carries its hand-off class name and a suggested React name."><img loading="lazy" src="./images/web-portfolio/redsight/components.png" alt="Components"></button>
+        <button class="tile" data-caption="Notes for the engineer: Tailwind mapping, breakpoints, motion timings, a full keyboard map and accessibility rules. Every value lives in a single tokens file, so the design moves into the Next.js app without any guesswork."><img loading="lazy" src="./images/web-portfolio/redsight/hand-off-notes.png" alt="Hand-off notes"></button>
+        <button class="tile" data-caption="Set for reading, not for show. JetBrains Mono carries the code, IBM Plex Sans runs the interface, and Newsreader gives headings an editorial voice. Spacing, radius, elevation and motion each follow a scale."><img loading="lazy" src="./images/web-portfolio/redsight/type-spacing-radius-elevation-motion.png" alt="Type, spacing, radius, elevation and motion"></button>
       </div>
     </div>
 
     <div class="sub">
       <div class="sub-head reveal"><h3>Source Code View</h3><p>The screen where users read the problematic source code and hunt for bugs. Shown in light and dark mode, with different features toggled in each.</p></div>
       <div class="gallery c2 reveal" style="--cols:2">
-        <button class="tile"><img loading="lazy" src="./images/web-portfolio/redsight/workspace-bug-count-hidden.png" alt="Workspace — bug count hidden, reveal costs credits"></button>
-        <button class="tile"><img loading="lazy" src="./images/web-portfolio/redsight/workspace-count-revealed.png" alt="Workspace — count revealed, Pro nudge"></button>
+        <button class="tile" data-caption="The default challenge is to find every bug without knowing how many there are. Revealing the count costs credits and gives up the perfect-score bonus, so players have to decide whether it's worth it."><img loading="lazy" src="./images/web-portfolio/redsight/workspace-bug-count-hidden.png" alt="Workspace — bug count hidden, reveal costs credits"></button>
+        <button class="tile" data-caption="The same workspace in dark mode, with the bug count revealed and a hint in use. Flags are drawn like pen marks: a red bracket, a wavy underline and a numbered pin, mirrored in the sidebar list."><img loading="lazy" src="./images/web-portfolio/redsight/workspace-count-revealed.png" alt="Workspace — count revealed, Pro nudge"></button>
       </div>
     </div>
 
     <div class="sub">
       <div class="sub-head reveal"><h3>Results View</h3><p>After submitting the bugs they found (or missed), users see their results here. Shown in light and dark mode.</p></div>
       <div class="gallery c3 reveal" style="--cols:3">
-        <button class="tile"><img loading="lazy" src="./images/web-portfolio/redsight/results-xp.png" alt="Results with XP"></button>
-        <button class="tile"><img loading="lazy" src="./images/web-portfolio/redsight/results-xp-credits-tier-gates.png" alt="Results — XP, credits and tier gates"></button>
-        <button class="tile"><img loading="lazy" src="./images/web-portfolio/redsight/results-practice-run.png" alt="Results — practice run vs. best"></button>
+        <button class="tile" data-caption="After a rated attempt, every planted bug is revealed with a plain-language explanation and the fix. Precision, recall and XP show exactly how the score was earned, and false alarms cost a little, so flagging everything doesn't pay."><img loading="lazy" src="./images/web-portfolio/redsight/results-xp.png" alt="Results with XP"></button>
+        <button class="tile" data-caption="The same results in light mode. The XP panel tracks progress toward the next tier and credit streaks. A flag on a bug that wasn't planted goes to review instead of being marked wrong."><img loading="lazy" src="./images/web-portfolio/redsight/results-xp-credits-tier-gates.png" alt="Results — XP, credits and tier gates"></button>
+        <button class="tile" data-caption="Practice runs are free and earn no XP. They compare you only with your own past attempts. A chart tracks bugs found across runs and calls out the bug you keep missing."><img loading="lazy" src="./images/web-portfolio/redsight/results-practice-run.png" alt="Results — practice run vs. best"></button>
       </div>
     </div>
   </section>
@@ -201,15 +212,15 @@
       </div>
     </div>
     <div class="gallery c1 reveal" style="--cols:1">
-      <button class="tile feature"><img loading="lazy" src="./images/web-portfolio/appgate/game-portal-index.jpg" alt="Game portal index"></button>
+      <button class="tile feature" data-caption="The portal I built to present the games to Mastercard and AppGate. Each card explains how the game plays, which fraud types AppGate's 360 Fraud Protection stops, and which threats players meet in the game. The whole portal works in English and Spanish."><img loading="lazy" src="./images/web-portfolio/appgate/game-portal-index.jpg" alt="Game portal index"></button>
     </div>
 
     <div class="sub">
       <div class="sub-head reveal"><h3>Mini Games</h3><p>I made five mini games, all designed in Claude Design and then handed over to Claude Code for development. Here are a few of them in action.</p></div>
       <div class="gallery c3 reveal" style="--cols:3">
-        <button class="tile"><video muted loop playsinline preload="metadata" src="./images/web-portfolio/appgate/clearing-game-demo.mp4"></video></button>
-        <button class="tile"><video muted loop playsinline preload="metadata" src="./images/web-portfolio/appgate/fraud-defense-demo.mp4" poster="./images/web-portfolio/appgate/fraud-defense-start-page.png"></video></button>
-        <button class="tile"><video muted loop playsinline preload="metadata" src="./images/web-portfolio/appgate/threat-breaker-demo.mp4"></video></button>
+        <button class="tile" data-caption="Clearing, a maze chase. Players steer a payment token through the maze while four attackers hunt them down. Holding a corner vault for two seconds turns on one authentication factor (push, QR, software token or OTP), and the attacker that factor counters can no longer touch them."><video muted loop playsinline preload="metadata" src="./images/web-portfolio/appgate/clearing-game-demo.mp4"></video></button>
+        <button class="tile" data-caption="Fraud Defense, a missile-defense game. Four banks, sixty seconds, and a turret that can't keep up on its own. Players shoot down fraudulent transactions before they land, then switch on the Safety Net and watch every remaining threat stop at the line."><video muted loop playsinline preload="metadata" src="./images/web-portfolio/appgate/fraud-defense-demo.mp4" poster="./images/web-portfolio/appgate/fraud-defense-start-page.png"></video></button>
+        <button class="tile" data-caption="Threat Breaker, a side-scroller for AppGate's Brand Guardian. Players fly an engineer past server racks labelled with threats like phishing, brand impersonation and fake apps. Lose all three lives and Brand Guardian steps in: the engineer returns shielded, with a cannon, and blasts the same threats out of the sky."><video muted loop playsinline preload="metadata" src="./images/web-portfolio/appgate/threat-breaker-demo.mp4"></video></button>
       </div>
     </div>
   </section>
@@ -224,43 +235,96 @@
       </div>
     </div>
     <div class="gallery c5 reveal" style="--cols:3">
-      <button class="tile"><img loading="lazy" src="./images/web-portfolio/stickr-store/homepage-hero.png" alt="Homepage hero"></button>
-      <button class="tile"><img loading="lazy" src="./images/web-portfolio/stickr-store/sticker-wall-editor-01.png" alt="Sticker wall editor"></button>
-      <button class="tile"><img loading="lazy" src="./images/web-portfolio/stickr-store/sticker-wall-print-guides.png" alt="Sticker wall print guides"></button>
-      <button class="tile"><img loading="lazy" src="./images/web-portfolio/stickr-store/sticker-wall-share-dialogs.png" alt="Share dialogs"></button>
-      <button class="tile"><img loading="lazy" src="./images/web-portfolio/stickr-store/template-creator-step-1.png" alt="Template creator, step 1"></button>
+      <button class="tile" data-caption="The storefront homepage. Bright die-cut artwork floats over a dark backdrop, and the hero leads straight into browsing the wall or shopping the latest themed drop."><img loading="lazy" src="./images/web-portfolio/stickr-store/homepage-hero.png" alt="Homepage hero"></button>
+      <button class="tile" data-caption="The sticker wall editor, here laying out a laptop cover. Users drag stickers from the library onto a canvas measured in real millimetres, pick from the sizes we actually print, and manage layers like in Figma. A running total updates as they go."><img loading="lazy" src="./images/web-portfolio/stickr-store/sticker-wall-editor-01.png" alt="Sticker wall editor"></button>
+      <button class="tile" data-caption="Print guides let users hold the layout against the real object before ordering. Large layouts are tiled across pages at true size, and each page carries a 100 mm bar and a bank-card gauge, so a print that came out rescaled is easy to spot and calibrate for."><img loading="lazy" src="./images/web-portfolio/stickr-store/sticker-wall-print-guides.png" alt="Sticker wall print guides"></button>
+      <button class="tile" data-caption="Sharing a wall, before and after. The first state warns plainly that an uploaded desk photo becomes public. Once the wall is shared, users see exactly what visitors can and can't see, and can stop sharing in one click."><img loading="lazy" src="./images/web-portfolio/stickr-store/sticker-wall-share-dialogs.png" alt="Share dialogs"></button>
+      <button class="tile" data-caption="Step one of creating a wall: what are the stickers going on? Every sticker is drawn at its real size, so the wall needs real dimensions too. Users pick a preset like a 14&quot; laptop lid, type their own measurements, or upload a photo and calibrate it."><img loading="lazy" src="./images/web-portfolio/stickr-store/template-creator-step-1.png" alt="Template creator, step 1"></button>
     </div>
   </section>
 
-  <!-- 04 Immunity -->
+  <!-- 04 UNHCR -->
+  <section class="project" id="unhcr">
+    <div class="p-head reveal">
+      <div><div class="p-num">04 — Client work</div><h2>UNHCR — Tracks: Life on the Run</h2></div>
+      <div class="p-body">
+        <p class="p-tag">Web design, interactive media and infographics telling the story of the Syrian refugee crisis.</p>
+        <p>Design work for UNHCR, the UN Refugee Agency: the website for “Tracks: Life on the Run”, a documentary about everyday life in the Za’atri refugee camp; interactive sections kept up to date with live data from the camp; awareness campaign websites; motion graphics; and interactive infographics for the UN’s internal newsletters.</p>
+      </div>
+    </div>
+    <div class="gallery c5 reveal" style="--cols:3">
+      <button class="tile" data-caption="The website for Tracks: Life on the Run, a documentary about everyday life in the Za’atri refugee camp in Jordan. Episodes play in a video carousel, with a live “Today in Za’atri” panel and reader comments below."><img loading="lazy" src="./images/web-portfolio/unhcr/a-day-in-the-life-homepage.png" alt="A Day in the Life — homepage"></button>
+      <button class="tile" data-caption="Designs for the “Today in Za’atri” panel, which stayed up to date with live data from the camp: weather, news, photos, registered refugees, electricity, water and food distribution. Each figure leads to a donation prompt. The last two frames compare dark and light treatments."><img loading="lazy" src="./images/web-portfolio/unhcr/a-day-in-the-life-interactive-media-variations.png" alt="A Day in the Life — interactive media variations"></button>
+      <button class="tile" data-caption="A campaign website for 1 Million Syrian Refugee Children, a joint UNHCR and UNICEF awareness campaign. It brings the campaign’s op-ed, video coverage, social media reach and press coverage together in one place."><video muted loop playsinline preload="metadata" src="./images/web-portfolio/unhcr/1-million-children-awarness-campain-coverage-2025-09-07_17.06.25.mp4"></video></button>
+      <button class="tile" data-caption="A still from the “Syria Humanitarian Appeal 2013” video, for which I designed all of the motion graphics. Every small tile in the wall behind the titles is a live video clip of news coverage of the Syria crisis." data-link="https://www.youtube.com/watch?v=qvzmMuVWZGs" data-link-text="Watch on YouTube ↗"><img loading="lazy" src="./images/web-portfolio/unhcr/800-days-of-conflict.png" alt="Syria Humanitarian Appeal 2013 — video still"></button>
+      <button class="tile" data-caption="An interactive infographic showing Syrian refugee numbers by host country, gender and age. Infographics like this were featured in live internal newsletters at the UN."><img loading="lazy" src="./images/web-portfolio/unhcr/infographic.png" alt="Syrian refugees infographic"></button>
+    </div>
+  </section>
+
+  <!-- 05 Immunity -->
   <section class="project" id="immunity">
     <div class="p-head reveal">
-      <div><div class="p-num">04 — Client work</div><h2>Immunity Inc.</h2></div>
+      <div><div class="p-num">05 — Client work</div><h2>Immunity Inc.</h2></div>
       <div class="p-body">
         <p class="p-tag">Websites, branding and marketing for an offensive security company.</p>
         <p>I did a wide range of design work for Immunity Inc. — from designing and building complete websites for the company and its security conference, Infiltrate, to graphic design: logo and branding, marketing material and swag.</p>
       </div>
     </div>
-    <div class="gallery c2 reveal" style="--cols:2">
-      <button class="tile"><video muted loop playsinline preload="metadata" src="./images/web-portfolio/immunity/immunity-inc-homepage-navigaton-demo.mp4" poster="./images/web-portfolio/immunity/immunityinc-homepage-hero-jan-01-2019.png"></video></button>
-      <button class="tile"><img loading="lazy" src="./images/web-portfolio/immunity/immunityinc-full-homepage-jan-01-2019.jpg" alt="Immunity Inc. full homepage, January 2019"></button>
+    <div class="gallery c6 reveal" style="--cols:3">
+      <button class="tile" data-caption="The Immunity homepage navigation. Opening a menu dims the hero behind it, so the long list of services stays easy to read over the artwork."><video muted loop playsinline preload="metadata" src="./images/web-portfolio/immunity/immunity-inc-homepage-navigaton-demo.mp4" poster="./images/web-portfolio/immunity/immunityinc-homepage-hero-jan-01-2019.png"></video></button>
+      <button class="tile" data-caption="The full Immunity homepage as it stood in January 2019. A hero promoting the Infiltrate conference leads into the product line (Ethos, Innuendo and Canvas), the consulting services, the Daily Dave newsletter, an emergency-response contact and a live feed of Immunity's social media."><img loading="lazy" src="./images/web-portfolio/immunity/immunityinc-full-homepage-jan-01-2019.jpg" alt="Immunity Inc. full homepage, January 2019"></button>
+      <button class="tile" data-caption="The Education section, under the line “We will teach you to write exploits and how to attack.” Each course has its own page with a day-by-day syllabus, followed by CPE credit information for (ISC)² members."><video muted loop playsinline preload="metadata" src="./images/web-portfolio/immunity/immunity-education-page-demo.mp4"></video></button>
+      <button class="tile" data-caption="Stalker, a tool that shows how much personal information leaks over open networks. Everything captured from one device, including photos, browsing, searches, chats and location, is pulled into a single dashboard. Personal details are blurred. I designed the interface and built the JavaScript frontend, which ran on a Python backend."><img loading="lazy" src="./images/web-portfolio/immunity/stalker-screenshot.jpg" alt="Stalker"></button>
+      <button class="tile" data-caption="VisualSploit, a visual exploit builder. Users set a target, drag building blocks like strings, NOP sleds, shellcode and jumps into the buffer, then run the exploit or export it to Canvas. I designed the interface and built the JavaScript frontend, which ran on a Python backend."><img loading="lazy" src="./images/web-portfolio/immunity/visual-sploit-screenshot.jpg" alt="VisualSploit"></button>
+      <button class="tile" data-caption="WebSiege, a web application scanner. The project dashboard tracks crawler and SQL-injection jobs, request statistics and vulnerabilities as they're found, alongside a live log. I designed the interface and built the JavaScript frontend, which ran on a Python backend."><img loading="lazy" src="./images/web-portfolio/immunity/websiege-screenshot.png" alt="WebSiege"></button>
     </div>
   </section>
 
-  <!-- 05 Infiltrate -->
+  <!-- 06 Infiltrate -->
   <section class="project" id="infiltrate">
     <div class="p-head reveal">
-      <div><div class="p-num">05 — Client work</div><h2>Infiltrate Security Conference</h2></div>
+      <div><div class="p-num">06 — Client work</div><h2>Infiltrate Security Conference</h2></div>
       <div class="p-body">
         <p class="p-tag">Websites, graphic design and marketing for one of the top offensive security conferences.</p>
         <p>Infiltrate, run by Immunity Inc., was one of the leading offensive security conferences. I designed, developed and maintained its websites, and created its graphic design and marketing material.</p>
       </div>
     </div>
-    <div class="gallery c2 reveal" style="--cols:2">
-      <button class="tile"><img loading="lazy" src="./images/web-portfolio/immunity/infiltrate-conf-full-page-index.png" alt="Infiltrate homepage"></button>
-      <button class="tile"><img loading="lazy" src="./images/web-portfolio/immunity/infiltrate-conf-lanyard.png" alt="Infiltrate lanyard"></button>
-      <button class="tile"><img loading="lazy" src="./images/web-portfolio/immunity/infiltrateconf-2019-speakers-page.jpg" alt="Infiltrate 2019 speakers page"></button>
-      <button class="tile"><img loading="lazy" src="./images/web-portfolio/immunity/infiltrate-conf-menu-open.png" alt="Infiltrate menu open"></button>
+    <div class="gallery c5 reveal" style="--cols:3">
+      <button class="tile" data-caption="The Infiltrate 2019 homepage, set in a strict black, white and red palette. The three ticket tiers play on security slang (0day, 1day and Tuesday), followed by what the pass includes, discounts and the sponsor wall."><img loading="lazy" src="./images/web-portfolio/immunity/infiltrate-conf-full-page-index.png" alt="Infiltrate homepage"></button>
+      <button class="tile" data-caption="Lanyard artwork for Infiltrate 2013. Circuit-like lines connect everyday devices, such as phones, laptops and email, to the distressed red-and-white Infiltrate logo."><img loading="lazy" src="./images/web-portfolio/immunity/infiltrate-conf-lanyard.png" alt="Infiltrate lanyard"></button>
+      <button class="tile" data-caption="The 2019 speakers page. A red index bar lists every speaker by name, above a grid of black-and-white portraits tagged for keynote and backup speakers, each linking to the speaker's bio and talks."><img loading="lazy" src="./images/web-portfolio/immunity/infiltrateconf-2019-speakers-page.jpg" alt="Infiltrate 2019 speakers page"></button>
+      <button class="tile" data-caption="The 2018 speakers page in motion: the announced lineup of talks, then a portrait grid where each speaker lights up in red on hover."><video muted loop playsinline preload="metadata" src="./images/web-portfolio/immunity/infiltrate-conf-speakers-demo.mp4"></video></button>
+      <button class="tile" data-caption="The full-screen menu from the 2019 site. Hovering an item reveals a short description of where it leads."><img loading="lazy" src="./images/web-portfolio/immunity/infiltrate-conf-menu-open.png" alt="Infiltrate menu open"></button>
+    </div>
+  </section>
+
+  <!-- 07 Numetric Labs -->
+  <section class="project" id="numetric-labs">
+    <div class="p-head reveal">
+      <div><div class="p-num">07 — Personal project</div><h2>Numetric Labs</h2></div>
+      <div class="p-body">
+        <p class="p-tag">My earlier online portfolio, designed and built from scratch.</p>
+        <p>Numetric Labs was the home of my online portfolio — a showcase of my web and mobile work, with its own visual identity and interactive touches.</p>
+      </div>
+    </div>
+    <div class="gallery c1 reveal" style="--cols:1">
+      <button class="tile feature" data-caption="A walkthrough of Numetric Labs. The landing page opens onto a grid of project tiles. Choosing one slides in a full-screen project viewer with bold coloured panel transitions, and an about panel introduces me and my work."><video muted loop playsinline preload="metadata" src="./images/web-portfolio/numetric-labs/numetric-labs-portfolio-demo-01.mp4"></video></button>
+    </div>
+  </section>
+
+  <!-- 08 Time Warner -->
+  <section class="project" id="time-warner">
+    <div class="p-head reveal">
+      <div><div class="p-num">08 — Client work</div><h2>Time Warner — People Puzzler</h2></div>
+      <div class="p-body">
+        <p class="p-tag">An iPad puzzle game, designed and built from the ground up.</p>
+        <p>I designed and implemented People Puzzler, an iPad game for Time Warner, written in Objective-C.</p>
+      </div>
+    </div>
+    <div class="gallery c3 reveal" style="--cols:3">
+      <button class="tile" data-caption="The title screen of The People Puzzler, a celebrity crossword game for iPad from People magazine."><img loading="lazy" src="./images/web-portfolio/time-warner/people-puzzler-00.png" alt="People Puzzler — title screen"></button>
+      <button class="tile" data-caption="Puzzles are grouped into Movies, TV, Music and Classics. Each one is themed around a celebrity, with a punning title like “Classic Ford” or “Green Giant”."><img loading="lazy" src="./images/web-portfolio/time-warner/people-puzzler-01.png" alt="People Puzzler — gameplay"></button>
+      <button class="tile" data-caption="The game in action. Players pick a puzzle, then solve it with a custom keyboard and pencil mode, with the Across and Down clues and the featured celebrity beside the grid. A menu offers help like showing mistakes or revealing a letter or word. I designed the game and built it in Objective-C."><video muted loop playsinline preload="metadata" src="./images/web-portfolio/time-warner/people-puzzler-demo.mp4"></video></button>
     </div>
   </section>
 
@@ -283,6 +347,7 @@
     </div>
   </div>
   <div class="lb-stage" id="lbStage"></div>
+  <p class="lb-desc" id="lbDesc"></p>
 </div>
 
 <script>
@@ -342,6 +407,12 @@
       var i = document.createElement('img'); i.src = img.getAttribute('src'); i.alt = img.alt;
       if(img.naturalHeight / img.naturalWidth > 1.4) stage.classList.add('tall');
       stage.appendChild(i); cap.textContent = img.alt || fileOf(img.getAttribute('src'));
+    }
+    var desc = t.dataset.caption || '';
+    var lbDesc = document.getElementById('lbDesc'); lbDesc.textContent = desc; lb.classList.toggle('captioned', !!desc);
+    if(t.dataset.link){
+      var a = document.createElement('a'); a.href = t.dataset.link; a.target = '_blank'; a.rel = 'noopener'; a.textContent = t.dataset.linkText || t.dataset.link;
+      lbDesc.appendChild(document.createTextNode(' ')); lbDesc.appendChild(a);
     }
     cap.textContent += group.length > 1 ? '  ·  ' + (idx+1) + ' / ' + group.length : '';
     document.getElementById('lbPrev').style.visibility = document.getElementById('lbNext').style.visibility = group.length > 1 ? 'visible' : 'hidden';
